@@ -467,6 +467,17 @@ const info = options => {
 
 const userNav = options => {
   const nav = [
+    // example
+    {
+      name: 'example',
+      parentId: 0,
+      id: 10088,
+      meta: {
+        title: 'Example',
+        show: true
+      },
+      component: 'Example'
+    },
     // dashboard
     {
       name: 'dashboard',
@@ -478,28 +489,7 @@ const userNav = options => {
         show: true
       },
       component: 'RouteView',
-      redirect: '/dashboard/workplace'
-    },
-    {
-      name: 'workplace',
-      parentId: 1,
-      id: 7,
-      meta: {
-        title: '工作台',
-        show: true
-      },
-      component: 'Workplace'
-    },
-    {
-      name: 'monitor',
-      path: 'https://www.baidu.com/',
-      parentId: 1,
-      id: 3,
-      meta: {
-        title: '监控页（外部）',
-        target: '_blank',
-        show: true
-      }
+      redirect: '/dashboard/analysis'
     },
     {
       name: 'Analysis',
@@ -512,7 +502,16 @@ const userNav = options => {
       component: 'Analysis',
       path: '/dashboard/analysis'
     },
-
+    {
+      name: 'workplace',
+      parentId: 1,
+      id: 7,
+      meta: {
+        title: '工作台',
+        show: true
+      },
+      component: 'Workplace'
+    },
     // form
     {
       name: 'form',
@@ -552,7 +551,6 @@ const userNav = options => {
       },
       component: 'AdvanceForm'
     },
-
     // list
     {
       name: 'list',

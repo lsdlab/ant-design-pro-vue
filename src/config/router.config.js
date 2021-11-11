@@ -29,12 +29,6 @@ export const asyncRouterMap = [
             component: () => import('@/views/dashboard/Analysis'),
             meta: { title: 'menu.dashboard.analysis', keepAlive: false, permission: ['dashboard'] }
           },
-          // 外部链接
-          {
-            path: 'https://www.baidu.com/',
-            name: 'Monitor',
-            meta: { title: 'menu.dashboard.monitor', target: '_blank' }
-          },
           {
             path: '/dashboard/workplace',
             name: 'Workplace',
@@ -123,6 +117,22 @@ export const asyncRouterMap = [
                 meta: { title: 'menu.list.search-list.applications', permission: ['table'] }
               }
             ]
+          }
+        ]
+      },
+
+      {
+        path: '/example',
+        name: 'example',
+        component: RouteView,
+        redirect: '/example/example',
+        meta: { title: 'menu.example', icon: 'table', permission: ['table'] },
+        children: [
+          {
+            path: '/example/example',
+            name: 'Example',
+            component: () => import('@/views/example/Example'),
+            meta: { title: 'Example', keepAlive: true, permission: ['table'] }
           }
         ]
       },

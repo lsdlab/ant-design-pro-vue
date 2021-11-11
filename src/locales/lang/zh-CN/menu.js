@@ -1,4 +1,6 @@
 export default {
+    'menu.example': 'example',
+    'menu.example.example': 'example',
     'menu.welcome': '欢迎',
     'menu.home': '主页',
     'menu.dashboard': '仪表盘',
