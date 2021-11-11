@@ -120,23 +120,13 @@ export const asyncRouterMap = [
           }
         ]
       },
-
+      // example
       {
         path: '/example',
         name: 'example',
-        component: RouteView,
-        redirect: '/example/example',
-        meta: { title: 'menu.example', icon: 'table', permission: ['table'] },
-        children: [
-          {
-            path: '/example/example',
-            name: 'Example',
-            component: () => import('@/views/example/Example'),
-            meta: { title: 'Example', keepAlive: true, permission: ['table'] }
-          }
-        ]
+        component: () => import('@/views/example/Example'),
+        meta: { title: 'Example', keepAlive: true, permission: ['example'] }
       },
-
       // profile
       {
         path: '/profile',
