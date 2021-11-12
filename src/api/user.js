@@ -1,3 +1,4 @@
+import { stringify } from 'qs';
 import request from '@/utils/request'
 
 let apiHost
@@ -24,6 +25,20 @@ export function signout (params) {
     url: `${apiHost}${apiVersion}/users/signout/`,
     method: 'post',
     data: params
+  })
+}
+
+export function queryUsers (params) {
+  return request({
+    url: `${apiHost}${apiVersion}/users/?${stringify(params)}`,
+    method: 'get'
+  })
+}
+
+export function queryUserNameIDs () {
+  return request({
+    url: `${apiHost}${apiVersion}/users/user_name_ids/`,
+    method: 'get'
   })
 }
 

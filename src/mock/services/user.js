@@ -468,16 +468,16 @@ const info = options => {
 const userNav = options => {
   const nav = [
     // example
-    {
-      name: 'example',
-      parentId: 0,
-      id: 10088,
-      meta: {
-        title: 'Example',
-        show: true
-      },
-      component: 'Example'
-    },
+    // {
+    //   name: 'example',
+    //   parentId: 0,
+    //   id: 10088,
+    //   meta: {
+    //     title: 'Example',
+    //     show: true
+    //   },
+    //   component: 'Example'
+    // },
     // dashboard
     {
       name: 'dashboard',

@@ -15,6 +15,13 @@ export const asyncRouterMap = [
     meta: { title: 'menu.home' },
     redirect: '/dashboard/workplace',
     children: [
+      // example
+      {
+        path: '/example',
+        name: 'example',
+        component: () => import('@/views/example/Example'),
+        meta: { title: 'Example', keepAlive: true, permission: ['table'] }
+      },
       // dashboard
       {
         path: '/dashboard',
@@ -119,13 +126,6 @@ export const asyncRouterMap = [
             ]
           }
         ]
-      },
-      // example
-      {
-        path: '/example',
-        name: 'example',
-        component: () => import('@/views/example/Example'),
-        meta: { title: 'Example', keepAlive: true, permission: ['example'] }
       },
       // profile
       {
