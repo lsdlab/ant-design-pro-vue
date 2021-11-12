@@ -42,6 +42,13 @@ export function queryUserNameIDs () {
   })
 }
 
+export function queryUserNav () {
+  return request({
+    url: `${apiHost}${apiVersion}/usernav/`,
+    method: 'get'
+  })
+}
+
 const userApi = {
   Login: '/auth/login',
   Logout: '/auth/logout',

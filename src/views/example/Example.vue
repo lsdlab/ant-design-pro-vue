@@ -7,20 +7,11 @@
 </template>
 
 <script>
-
 export default {
-  name: 'Example',
-  components: {
-  },
-  data () {
-  },
-  filters: {
-  },
-  created () {
-  },
-  computed: {
-  },
-  methods: {
-  }
+  name: 'Example'
 }
 </script>
+
+<style scoped>
+
+</style>
