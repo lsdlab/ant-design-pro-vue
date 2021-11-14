@@ -1,6 +1,7 @@
 export default {
-    'menu.example': 'example',
-    'menu.example.example': 'example',
+    'menu.example': '示例',
+    'menu.example.example': '空页面',
+    'menu.example.userlist': '用户列表',
     'menu.welcome': '欢迎',
     'menu.home': '主页',
     'menu.dashboard': '仪表盘',

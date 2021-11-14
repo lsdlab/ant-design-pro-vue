@@ -19,8 +19,23 @@ export const asyncRouterMap = [
       {
         path: '/example',
         name: 'example',
-        component: () => import('@/views/example/Example'),
-        meta: { title: 'Example', keepAlive: true, permission: ['table'] }
+        redirect: '/example/example',
+        component: RouteView,
+        meta: { title: '示例', keepAlive: true, icon: 'dashboard', permission: ['table'] },
+        children: [
+          {
+            path: '/example/example',
+            name: 'Example',
+            component: () => import('@/views/example/Example'),
+            meta: { title: '空页面', keepAlive: false, permission: ['table'] }
+          },
+          {
+            path: '/example/userlist',
+            name: 'UserList',
+            component: () => import('@/views/example/UserList'),
+            meta: { title: '用户列表', keepAlive: false, permission: ['table'] }
+          }
+        ]
       },
       // dashboard
       {

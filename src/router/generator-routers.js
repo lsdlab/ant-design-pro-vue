@@ -24,7 +24,6 @@ const constantRouterComponents = {
   AdvanceForm: () => import('@/views/form/advancedForm/AdvancedForm'),
 
   // list
-  Example: () => import('@/views/example/Example'),
   TableList: () => import('@/views/list/TableList'),
   StandardList: () => import('@/views/list/BasicList'),
   CardList: () => import('@/views/list/CardList'),

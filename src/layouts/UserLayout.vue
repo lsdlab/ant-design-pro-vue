@@ -2,24 +2,27 @@
 
   <div id="userLayout" :class="['user-layout-wrapper', isMobile && 'mobile']">
     <div class="container">
+      <div class="user-layout-lang">
+        <select-lang class="select-lang-trigger" />
+      </div>
       <div class="user-layout-content">
         <div class="top">
           <div class="header">
             <a href="/">
               <img src="~@/assets/logo.svg" class="logo" alt="logo">
-              <span class="title">Ant Design</span>
+              <span class="title">Ant Design Pro</span>
             </a>
           </div>
-          <div class="desc">
-            {{ $t('layouts.userLayout.title') }}
-          </div>
+          <!-- <div class="desc">
+            Ant Design 是西湖区最具影响力的 Web 设计规范
+          </div> -->
         </div>
 
         <router-view />
 
         <div class="footer">
           <div class="copyright">
-            Copyright &copy; 2021 BreakWire Lab
+            <p>Copyright &copy; <a href="https://lab.breakwire.me" target="_blank">BreakWire Lab</a> 2021 All Rights Reserved</p>
           </div>
         </div>
       </div>

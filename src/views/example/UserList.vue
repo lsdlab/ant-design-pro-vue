@@ -1,14 +1,14 @@
 <template>
   <page-header-wrapper>
     <a-card :bordered="false">
-      <h1>空页面</h1>
+      <h1>用户列表</h1>
     </a-card>
   </page-header-wrapper>
 </template>
 
 <script>
 export default {
-  name: 'Example'
+  name: 'UserList'
 }
 </script>
 
