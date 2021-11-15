@@ -75,6 +75,17 @@ export default {
       height: 40px;
       line-height: 44px;
       text-align: right;
+
+      .select-lang-trigger {
+        cursor: pointer;
+        padding: 12px;
+        margin-right: 24px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        vertical-align: middle;
+      }
     }
 
     .user-layout-content {
