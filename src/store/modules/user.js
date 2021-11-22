@@ -38,7 +38,7 @@ const user = {
     // 登录
     Login ({ commit }, userInfo) {
       return new Promise((resolve, reject) => {
-        // JC 修改登录
+        // JC 修改登录api
         token(userInfo).then(response => {
           const token = response.token
           storage.set(ACCESS_TOKEN, token, 14 * 24 * 60 * 60)
