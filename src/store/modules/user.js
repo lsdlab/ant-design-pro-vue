@@ -1,5 +1,7 @@
 import storage from 'store'
-import { login, getInfo, logout } from '@/api/login'
+// import { login, getInfo, logout } from '@/api/login'
+import { getInfo, logout } from '@/api/login'
+import { token } from '@/api/api'
 import { ACCESS_TOKEN } from '@/store/mutation-types'
 import { welcome } from '@/utils/util'
 
@@ -36,10 +38,11 @@ const user = {
     // 登录
     Login ({ commit }, userInfo) {
       return new Promise((resolve, reject) => {
-        login(userInfo).then(response => {
-          const result = response.result
-          storage.set(ACCESS_TOKEN, result.token, 7 * 24 * 60 * 60 * 1000)
-          commit('SET_TOKEN', result.token)
+        // JC 修改登录
+        token(userInfo).then(response => {
+          const token = response.token
+          storage.set(ACCESS_TOKEN, token, 14 * 24 * 60 * 60)
+          commit('SET_TOKEN', token)
           resolve()
         }).catch(error => {
           reject(error)

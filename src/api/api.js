@@ -11,6 +11,17 @@ if (process.env.NODE_ENV === 'development') {
 }
 const apiVersion = '/api/v1'
 
+export function token (params) {
+  return request({
+    url: `${apiHost}${apiVersion}/token/`,
+    method: 'post',
+    data: params,
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+}
+
 export function signin (params) {
   return request({
     url: `${apiHost}${apiVersion}/users/signin/`,
