@@ -22,21 +22,21 @@ export function token (params) {
   })
 }
 
-export function signin (params) {
-  return request({
-    url: `${apiHost}${apiVersion}/users/signin/`,
-    method: 'post',
-    data: params
-  })
-}
+// export function signin (params) {
+//   return request({
+//     url: `${apiHost}${apiVersion}/users/signin/`,
+//     method: 'post',
+//     data: params
+//   })
+// }
 
-export function signout (params) {
-  return request({
-    url: `${apiHost}${apiVersion}/users/signout/`,
-    method: 'post',
-    data: params
-  })
-}
+// export function signout (params) {
+//   return request({
+//     url: `${apiHost}${apiVersion}/users/signout/`,
+//     method: 'post',
+//     data: params
+//   })
+// }
 
 export function queryUsers (params) {
   return request({
