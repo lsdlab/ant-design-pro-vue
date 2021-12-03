@@ -4,7 +4,7 @@ import Vuex from 'vuex'
 import app from './modules/app'
 import user from './modules/user'
 
-// default router permission control JC 修改 1 静态权限
+// default router permission control JC 修改 使用静态路由权限控制
 import permission from './modules/permission'
 
 // dynamic router permission control (Experimental)

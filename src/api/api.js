@@ -4,7 +4,7 @@ import request from '@/utils/request'
 let apiHost
 if (process.env.NODE_ENV === 'development') {
   console.log('========== DEVELOPMENT RUNSERVER ==========')
-  apiHost = 'http://localhost:8000'
+  apiHost = 'http://localhost:5000'
 } else {
   console.log('======== PRODUCTION BUILD ========')
   apiHost = 'http://1.15.14.27:8000'
@@ -16,6 +16,16 @@ export function token (params) {
     url: `${apiHost}${apiVersion}/token/`,
     method: 'post',
     data: params,
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+}
+
+export function fetchCurrentUser () {
+  return request({
+    url: `${apiHost}${apiVersion}/users/current_user/`,
+    method: 'get',
     headers: {
       'Content-Type': 'application/json'
     }

@@ -57,12 +57,12 @@ import { queryUsers } from '@/api/api'
 
 const columns = [
   {
-    title: '邮箱',
-    dataIndex: 'email'
-  },
-  {
     title: '用户名',
     dataIndex: 'username'
+  },
+  {
+    title: '邮箱',
+    dataIndex: 'email'
   },
   {
     title: '超级用户',
@@ -105,7 +105,7 @@ export default {
       // 加载数据方法 必须为 Promise 对象
       loadData: parameter => {
         const params = Object.assign({}, parameter, this.queryParam)
-        console.log('loadData request parameters:', params)
+        // console.log('loadData request parameters:', params)
         return queryUsers(params)
           .then(res => {
             return res

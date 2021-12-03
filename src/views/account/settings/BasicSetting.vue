@@ -5,37 +5,32 @@
 
         <a-form layout="vertical">
           <a-form-item
-            :label="$t('account.settings.basic.nickname')"
+            label="用户名"
           >
-            <a-input :placeholder="$t('account.settings.basic.nickname-message')" />
-          </a-form-item>
-          <a-form-item
-            :label="$t('account.settings.basic.profile')"
-          >
-            <a-textarea rows="4" :placeholder="$t('account.settings.basic.profile-message')"/>
+            <a-input v-model="currentUser.username" />
           </a-form-item>
 
           <a-form-item
-            :label="$t('account.settings.basic.email')"
+            label="邮箱"
             :required="false"
           >
-            <a-input placeholder="example@ant.design"/>
+            <a-input v-model="currentUser.email" />
           </a-form-item>
 
           <a-form-item>
-            <a-button type="primary">{{ $t('account.settings.basic.update') }}</a-button>
+            <a-button type="primary">更新</a-button>
           </a-form-item>
         </a-form>
 
       </a-col>
       <a-col :order="1" :md="24" :lg="8" :style="{ minHeight: '180px' }">
-        <div class="ant-upload-preview" @click="$refs.modal.edit(1)" >
+        <!-- <div class="ant-upload-preview" @click="$refs.modal.edit(1)" >
           <a-icon type="cloud-upload-o" class="upload-icon"/>
           <div class="mask">
             <a-icon type="plus" />
           </div>
           <img :src="option.img"/>
-        </div>
+        </div> -->
       </a-col>
 
     </a-row>
@@ -48,6 +43,8 @@
 <script>
 import AvatarModal from './AvatarModal'
 import { baseMixin } from '@/store/app-mixin'
+import storage from 'store'
+import { CURRENT_USER } from '@/store/mutation-types'
 
 export default {
   mixins: [baseMixin],
@@ -56,6 +53,7 @@ export default {
   },
   data () {
     return {
+      currentUser: {},
       // cropper
       preview: {},
       option: {
@@ -78,6 +76,13 @@ export default {
   methods: {
     setavatar (url) {
       this.option.img = url
+    }
+  },
+  mounted () {
+    const currentUser = storage.get(CURRENT_USER)
+    this.currentUser = {
+      username: currentUser.username,
+      email: currentUser.email
     }
   }
 }

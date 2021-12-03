@@ -139,7 +139,7 @@ export default {
         if (!err) {
           console.log('login form', values)
           const loginParams = { ...values }
-          // JC 修改登录
+          // JC 修改 1 登录用户名密码
           // delete loginParams.username
           // loginParams[!state.loginType ? 'email' : 'username'] = values.username
           // loginParams.password = md5(values.password)

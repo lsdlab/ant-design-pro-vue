@@ -1,13 +1,14 @@
 import storage from 'store'
 // import { login, getInfo, logout } from '@/api/login'
 import { getInfo, logout } from '@/api/login'
-import { token } from '@/api/api'
-import { ACCESS_TOKEN } from '@/store/mutation-types'
+import { token, fetchCurrentUser } from '@/api/api'
+import { ACCESS_TOKEN, CURRENT_USER } from '@/store/mutation-types'
 import { welcome } from '@/utils/util'
 
 const user = {
   state: {
     token: '',
+    currentUser: {},
     name: '',
     welcome: '',
     avatar: '',
@@ -18,6 +19,9 @@ const user = {
   mutations: {
     SET_TOKEN: (state, token) => {
       state.token = token
+    },
+    SET_CURRENT_USER: (state, currentUser) => {
+      state.currentUser = currentUser
     },
     SET_NAME: (state, { name, welcome }) => {
       state.name = name
@@ -43,6 +47,11 @@ const user = {
           const token = response.token
           storage.set(ACCESS_TOKEN, token, 14 * 24 * 60 * 60)
           commit('SET_TOKEN', token)
+
+          fetchCurrentUser().then(response => {
+            storage.set(CURRENT_USER, response)
+            commit('SET_CURRENT_USER', response)
+          })
           resolve()
         }).catch(error => {
           reject(error)
@@ -89,6 +98,7 @@ const user = {
           commit('SET_TOKEN', '')
           commit('SET_ROLES', [])
           storage.remove(ACCESS_TOKEN)
+          storage.remove(CURRENT_USER)
           resolve()
         }).catch((err) => {
           console.log('logout fail:', err)
