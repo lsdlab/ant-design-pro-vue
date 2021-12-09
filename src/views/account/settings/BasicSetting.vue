@@ -7,19 +7,19 @@
           <a-form-item
             label="用户名"
           >
-            <a-input v-model="currentUser.username" />
+            <a-input v-model="currentUser.username" disabled />
           </a-form-item>
 
           <a-form-item
             label="邮箱"
             :required="false"
           >
-            <a-input v-model="currentUser.email" />
+            <a-input v-model="currentUser.email" disabled />
           </a-form-item>
 
-          <a-form-item>
+          <!-- <a-form-item>
             <a-button type="primary">更新</a-button>
-          </a-form-item>
+          </a-form-item> -->
         </a-form>
 
       </a-col>
