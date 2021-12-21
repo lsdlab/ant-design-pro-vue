@@ -4,7 +4,7 @@ import request from '@/utils/request'
 let apiHost
 if (process.env.NODE_ENV === 'development') {
   console.log('========== DEVELOPMENT RUNSERVER ==========')
-  apiHost = 'http://localhost:5000'
+  apiHost = 'http://localhost:8000'
 } else {
   console.log('======== PRODUCTION BUILD ========')
   apiHost = 'http://1.15.14.27:8000'
