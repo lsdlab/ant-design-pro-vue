@@ -3,7 +3,7 @@
     <template v-slot:links>
     </template>
     <template v-slot:copyright>
-      <p>Copyright &copy; <a href="https://lab.breakwire.me" target="_blank">BreakWire Lab</a> 2021 All Rights Reserved</p>
+      <p>Copyright &copy; <a href="http://breakwire.me" target="_blank">BreakWire</a> 2021-2022 All Rights Reserved</p>
     </template>
   </global-footer>
 </template>

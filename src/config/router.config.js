@@ -15,6 +15,75 @@ export const asyncRouterMap = [
     meta: { title: 'menu.home' },
     redirect: '/dashboard/workplace',
     children: [
+      {
+        path: '/vis',
+        name: 'vis',
+        redirect: '/vis/data-visualization',
+        component: RouteView,
+        meta: { title: 'menu.vis', keepAlive: true, icon: 'dashboard', permission: ['table'] },
+        children: [
+          {
+            path: '/vis/data-visualization',
+            name: 'data-visualization',
+            component: () => import('@/views/vis/DataVisualization'),
+            meta: { title: 'menu.vis.data-visualization', keepAlive: false, permission: ['table'] }
+          },
+          {
+            path: '/vis/data-arrange',
+            name: 'data-arrange',
+            component: () => import('@/views/vis/DataArrange'),
+            meta: { title: 'menu.vis.data-arrange', keepAlive: false, permission: ['table'] }
+          }
+        ]
+      },
+      {
+        path: '/iot',
+        name: 'iot',
+        redirect: '/iot/device-list',
+        component: RouteView,
+        meta: { title: 'menu.iot', keepAlive: true, icon: 'appstore', permission: ['table'] },
+        children: [
+          {
+            path: '/iot/device-list',
+            name: 'device-list',
+            component: () => import('@/views/iot/Device'),
+            meta: { title: 'menu.iot.device-list', keepAlive: false, permission: ['table'] }
+          },
+          {
+            path: '/iot/rule-list',
+            name: 'rule-list',
+            component: () => import('@/views/iot/Rule'),
+            meta: { title: 'menu.iot.rule-list', keepAlive: false, permission: ['table'] }
+          },
+          {
+            path: '/iot/edge-list',
+            name: 'edge-list',
+            component: () => import('@/views/iot/Edge'),
+            meta: { title: 'menu.iot.edge-list', keepAlive: false, permission: ['table'] }
+          }
+        ]
+      },
+      {
+        path: '/auth',
+        name: 'auth',
+        redirect: '/auth/user-list',
+        component: RouteView,
+        meta: { title: 'menu.auth', keepAlive: true, icon: 'user', permission: ['table'] },
+        children: [
+          {
+            path: '/auth/user-list',
+            name: 'user-list',
+            component: () => import('@/views/auth/UserList'),
+            meta: { title: 'menu.auth.user-list', keepAlive: false, permission: ['table'] }
+          },
+          {
+            path: '/auth/rbac-list',
+            name: 'rbac-list',
+            component: () => import('@/views/auth/RBAC'),
+            meta: { title: 'menu.auth.rbac-list', keepAlive: false, permission: ['table'] }
+          }
+        ]
+      },
       // example
       {
         path: '/example',
@@ -194,6 +263,7 @@ export const asyncRouterMap = [
         name: 'exception',
         component: RouteView,
         redirect: '/exception/403',
+        hidden: true,
         meta: { title: 'menu.exception', icon: 'warning', permission: ['exception'] },
         children: [
           {
@@ -220,9 +290,10 @@ export const asyncRouterMap = [
       // account
       {
         path: '/account',
+        name: 'account',
         component: RouteView,
         redirect: '/account/center',
-        name: 'account',
+        hidden: true,
         meta: { title: 'menu.account', icon: 'user', keepAlive: true, permission: ['user'] },
         children: [
           {
