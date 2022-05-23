@@ -7,7 +7,7 @@ if (process.env.NODE_ENV === 'development') {
   apiHost = 'http://localhost:8000'
 } else {
   console.log('======== PRODUCTION BUILD ========')
-  apiHost = 'http://1.15.14.27:8000'
+  apiHost = 'http://localhost:8000'
 }
 const apiVersion = '/api/v1'
 
