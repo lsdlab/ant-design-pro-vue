@@ -36,54 +36,6 @@ export const asyncRouterMap = [
           }
         ]
       },
-      {
-        path: '/iot',
-        name: 'iot',
-        redirect: '/iot/device-list',
-        component: RouteView,
-        meta: { title: 'menu.iot', keepAlive: true, icon: 'appstore', permission: ['table'] },
-        children: [
-          {
-            path: '/iot/device-list',
-            name: 'device-list',
-            component: () => import('@/views/iot/Device'),
-            meta: { title: 'menu.iot.device-list', keepAlive: false, permission: ['table'] }
-          },
-          {
-            path: '/iot/rule-list',
-            name: 'rule-list',
-            component: () => import('@/views/iot/Rule'),
-            meta: { title: 'menu.iot.rule-list', keepAlive: false, permission: ['table'] }
-          },
-          {
-            path: '/iot/edge-list',
-            name: 'edge-list',
-            component: () => import('@/views/iot/Edge'),
-            meta: { title: 'menu.iot.edge-list', keepAlive: false, permission: ['table'] }
-          }
-        ]
-      },
-      {
-        path: '/auth',
-        name: 'auth',
-        redirect: '/auth/user-list',
-        component: RouteView,
-        meta: { title: 'menu.auth', keepAlive: true, icon: 'user', permission: ['table'] },
-        children: [
-          {
-            path: '/auth/user-list',
-            name: 'user-list',
-            component: () => import('@/views/auth/UserList'),
-            meta: { title: 'menu.auth.user-list', keepAlive: false, permission: ['table'] }
-          },
-          {
-            path: '/auth/rbac-list',
-            name: 'rbac-list',
-            component: () => import('@/views/auth/RBAC'),
-            meta: { title: 'menu.auth.rbac-list', keepAlive: false, permission: ['table'] }
-          }
-        ]
-      },
       // example
       {
         path: '/example',
@@ -93,16 +45,16 @@ export const asyncRouterMap = [
         meta: { title: '示例', keepAlive: true, icon: 'dashboard', permission: ['table'] },
         children: [
           {
-            path: '/example/example',
-            name: 'Example',
-            component: () => import('@/views/example/Example'),
-            meta: { title: '空页面', keepAlive: false, permission: ['table'] }
-          },
-          {
             path: '/example/userlist',
             name: 'UserList',
             component: () => import('@/views/example/UserList'),
             meta: { title: '用户列表', keepAlive: false, permission: ['table'] }
+          },
+          {
+            path: '/example/example',
+            name: 'Example',
+            component: () => import('@/views/example/Example'),
+            meta: { title: '空页面', keepAlive: false, permission: ['table'] }
           }
         ]
       },
